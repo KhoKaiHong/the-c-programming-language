@@ -1,0 +1,6 @@
+.zed
+.clang-format
+*.exe
+*.o
+*.obj
+*.dll
