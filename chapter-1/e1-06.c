@@ -12,8 +12,20 @@ int main()
 {
 	int c;
 
+	putchar(72); // H
+	putchar(101); // e
+	putchar(108); // l
+	putchar(108); // l
+	putchar(111); // o
+
+	putchar(13); // Carriage return
+	putchar(10); // Line feed
+
+	// Gets a character, due to precedence of operations, performs an equality check using != operation with EOF, then prints the output
+	// 1 will be printed if getchar does not receive EOF, else 0 will be printed
+	// To send an EOF signal, use Ctrl + Z in Windows, and Ctrl + D in Mac/Linux
 	c = getchar() != EOF;
-	putchar(c);
+	printf("%d\n", c);
 
 	while ((c = getchar()) != EOF) {
 		putchar(c);
