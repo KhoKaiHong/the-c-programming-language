@@ -18,6 +18,8 @@ int main()
 			printf("%3d - %s", length, line);
 		}
 	}
+	
+	return 0;
 }
 
 // getline implementation remains the same
