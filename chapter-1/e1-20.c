@@ -32,7 +32,7 @@ int detab(int col, int tab_stop)
 {
 	// Spaces represent the number of spaces required to reach the tab stop
 	// Eg col = 1, 4 - (1 % 4) = 4; col = 14, 4 - (14 % 4) = 2
-	int spaces = TAB_STOP - (col % TAB_STOP);
+	int spaces = tab_stop - (col % tab_stop);
 	for (int j = 0; j < spaces; j++) {
 		putchar(' ');
 		col++;
@@ -46,7 +46,7 @@ int detab_bitwise(int col, int tab_stop)
 	// Spaces represent the number of spaces required to reach the tab stop
 	// Eg col = 1, 4 - (0001 & 0100 - 0001); 4 - (0001 & 0011); 4 - 0001; 4 - 1 = 3
 	// Eg col = 14, 4 - (1110 & 0100 - 0001); 4 - (1110 & 0011); 4 - 0010; 4 - 2 = 2
-	int spaces = TAB_STOP - (col & TAB_STOP - 1);
+	int spaces = tab_stop - (col & tab_stop - 1);
 	for (int j = 0; j < spaces; j++) {
 		putchar(' ');
 		col++;
