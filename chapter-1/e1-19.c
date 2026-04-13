@@ -38,7 +38,7 @@ int getline(char line[], int limit)
 
 void reverse(char line[], int len)
 {
-	// Reverse only if strring exceeds length of 1
+	// Reverse only if string exceeds length of 1
 	if (len > 1) {
 		int start = 0;
 		int end = len - 1;
@@ -53,7 +53,7 @@ void reverse(char line[], int len)
 			line[start] = line[start] ^ line[end];
 			line[end] = line[end] ^ line[start];
 			line[start] = line[start] ^ line[end];
-			// Decrements end in increments start
+			// Decrements end and increments start
 			end--;
 			start++;
 		}
