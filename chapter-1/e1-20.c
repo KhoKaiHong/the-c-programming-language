@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define TAB_STOP 4
+#define TAB_STOP 8
 
 // Regular detab, works for tab stops of any number
 int detab(int col, int tab_stop);
@@ -31,7 +31,7 @@ int main()
 int detab(int col, int tab_stop)
 {
 	// Spaces represent the number of spaces required to reach the tab stop
-	// Eg col = 1, 4 - (1 % 4) = 4; col = 14, 4 - (14 % 4) = 2
+	// Eg col = 1, 8 - (1 % 8) = 7; col = 14, 8 - (14 % 8) = 2
 	int spaces = tab_stop - (col % tab_stop);
 	for (int j = 0; j < spaces; j++) {
 		putchar(' ');
@@ -44,8 +44,8 @@ int detab(int col, int tab_stop)
 int detab_bitwise(int col, int tab_stop)
 {
 	// Spaces represent the number of spaces required to reach the tab stop
-	// Eg col = 1, 4 - (0001 & 0100 - 0001); 4 - (0001 & 0011); 4 - 0001; 4 - 1 = 3
-	// Eg col = 14, 4 - (1110 & 0100 - 0001); 4 - (1110 & 0011); 4 - 0010; 4 - 2 = 2
+	// Eg col = 1, 8 - (0001 & 1000 - 0001); 8 - (0001 & 0111); 8 - 0001; 8 - 1 = 7
+	// Eg col = 14, 8 - (1110 & 1000 - 0001); 8 - (1110 & 0111); 8 - 0110; 8 - 6 = 2
 	int spaces = tab_stop - (col & tab_stop - 1);
 	for (int j = 0; j < spaces; j++) {
 		putchar(' ');
